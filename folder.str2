@@ -1,0 +1,109 @@
+growwise/
+├── .env.local
+├── prisma/
+│   └── schema.prisma
+├── public/
+│   └── favicon.ico
+├── src/
+│   ├── app/
+│   │   ├── (auth)/                 # ROUTE GROUP: For login, signup, etc.
+│   │   │   ├── login/
+│   │   │   │   └── page.tsx
+│   │   │   └── register/
+│   │   │       └── page.tsx
+│   │   ├── (main)/                 # ROUTE GROUP: For the main, authenticated app
+│   │   │   ├── funds/
+│   │   │   │   └── page.tsx
+│   │   │   ├── portfolio/
+│   │   │   │   └── [portfolioId]/  # DYNAMIC ROUTE: For viewing a specific portfolio
+│   │   │   │       └── page.tsx
+│   │   │   └── scheme/
+│   │   │       └── [code]/         # DYNAMIC ROUTE: For a specific fund
+│   │   │           └── page.tsx
+│   │   ├── api/
+│   │   │   ├── auth/[...nextauth]/   # API: NextAuth.js handler for login/signup
+│   │   │   │   └── route.ts
+│   │   │   ├── mf/
+│   │   │   │   └── route.ts
+│   │   │   ├── portfolio/
+│   │   │   │   └── [portfolioId]/  # API: For specific portfolio data
+│   │   │   │       └── route.ts
+│   │   │   └── scheme/
+│   │   │       └── [code]/
+│   │   │           ├── lumpsum/route.ts  # API: Lumpsum calculator
+│   │   │           ├── returns/route.ts
+│   │   │           ├── rolling/route.ts  # API: Rolling returns calculator
+│   │   │           ├── sip/route.ts
+│   │   │           ├── swp/route.ts      # API: SWP calculator
+│   │   │           └── route.ts
+│   │   ├── components/
+│   │   │   ├── features/
+│   │   │   │   ├── auth/
+│   │   │   │   │   ├── LoginForm.tsx
+│   │   │   │   │   └── RegisterForm.tsx
+│   │   │   │   ├── calculators/
+│   │   │   │   │   ├── LumpsumCalculatorForm.tsx
+│   │   │   │   │   ├── RollingReturnsForm.tsx
+│   │   │   │   │   ├── SipCalculatorForm.tsx
+│   │   │   │   │   ├── SwpCalculatorForm.tsx
+│   │   │   │   │   └── UniversalResultCard.tsx # One card to show all results
+│   │   │   │   ├── charts/
+│   │   │   │   │   ├── NavHistoryChart.tsx
+│   │   │   │   │   └── RollingReturnsChart.tsx
+│   │   │   │   ├── portfolio/
+│   │   │   │   │   └── PortfolioDetailView.tsx
+│   │   │   │   └── scheme/
+│   │   │   │       ├── SchemeDetailView.tsx
+│   │   │   │       ├── SchemeList.tsx
+│   │   │   │       └── ReturnsTable.tsx
+│   │   │   └── ui/
+│   │   │       ├── Button.tsx
+│   │   │       ├── Card.tsx
+│   │   │       ├── InputField.tsx
+│   │   │       ├── Loader.tsx
+│   │   │       ├── Navigation.tsx
+│   │   │       └── SearchBar.tsx
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   │
+│   ├── config/
+│   │   └── constants.ts
+│   │
+│   ├── data/
+│   │   ├── portfolio.ts
+│   │   └── user.ts
+│   │
+│   ├── hooks/
+│   │   └── use-current-user.ts
+│   │
+│   ├── lib/
+│   │   ├── auth.ts
+│   │   ├── cache.ts
+│   │   ├── clients/
+│   │   │   ├── gemini.ts
+│   │   │   └── prisma.ts
+│   │   └── utils/
+│   │       ├── financialCalculations.ts # All math logic lives here
+│   │       └── formatters.ts
+│   │
+│   ├── middleware.ts               # MIDDLEWARE: Handles CORS and auth redirection
+│   │
+│   ├── providers/
+│   │   ├── AuthProvider.tsx
+│   │   ├── QueryProvider.tsx
+│   │   ├── ThemeProvider.tsx
+│   │   └── ToasterProvider.tsx
+│   │
+│   ├── services/
+│   │   ├── authService.ts
+│   │   └── mfService.ts
+│   │
+│   ├── schemas/
+│   │   ├── authSchema.ts
+│   │   └── calculatorSchema.ts     # All calculator Zod schemas
+│   │
+│   └── types/
+│       └── index.ts
+│
+└── tsconfig.json

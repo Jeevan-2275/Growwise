@@ -1,0 +1,111 @@
+growwise/
+├── .next/
+├── node_modules/
+├── public/
+│   └── favicon.ico
+│
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   ├── ai/
+│   │   │   │   ├── assistant.ts
+│   │   │   │   ├── compare/
+│   │   │   │   │   └── index.ts
+│   │   │   │   └── index.ts
+│   │   │   ├── investment/
+│   │   │   │   ├── [id].ts
+│   │   │   │   ├── lumpsum.ts
+│   │   │   │   ├── rolling.ts
+│   │   │   │   ├── sip.ts
+│   │   │   │   └── swp.ts
+│   │   │   ├── mf/
+│   │   │   │   └── route.ts
+│   │   │   ├── portfolio/
+│   │   │   │   ├── create.ts
+│   │   │   │   ├── delete.ts
+│   │   │   │   ├── update.ts
+│   │   │   │   └── view.ts
+│   │   │   ├── reports/
+│   │   │   │   ├── excel.ts
+│   │   │   │   └── pdf.ts
+│   │   │   └── scheme/
+│   │   │       └── [schemeCode]/
+│   │   │           ├── returns/
+│   │   │           │   └── route.ts
+│   │   │           └── route.ts
+│   │   │
+│   │   ├── components/
+│   │   │   ├── ai/
+│   │   │   │   └── ChatAgent.tsx
+│   │   │   ├── calculators/
+│   │   │   │   ├── LumpsumCalculator.tsx
+│   │   │   │   ├── ScenarioSimulator.tsx
+│   │   │   │   ├── SIPCalculator.tsx
+│   │   │   │   └── SWPCalculator.tsx
+│   │   │   ├── graphs/
+│   │   │   │   ├── CashflowChart.tsx
+│   │   │   │   ├── GrowthChart.tsx
+│   │   │   │   └── RollingReturnsChart.tsx
+│   │   │   ├── layout/
+│   │   │   │   ├── Footer.tsx
+│   │   │   │   ├── Navigation.tsx
+│   │   │   │   └── ThemeProvider.tsx
+│   │   │   └── ui/
+│   │   │       ├── Button.tsx
+│   │   │       ├── Header.tsx
+│   │   │       ├── Loader.tsx
+│   │   │       └── Modal.tsx
+│   │   │
+│   │   ├── middleware/
+│   │   │   ├── cors.ts
+│   │   │   └── errorHandler.ts
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── ai.tsx
+│   │   │   ├── compare.tsx
+│   │   │   ├── funds.tsx
+│   │   │   ├── index.tsx
+│   │   │   ├── portfolio.tsx
+│   │   │   └── scheme.tsx
+│   │   │
+│   │   ├── styles/
+│   │   │   ├── ChatAgent.module.css
+│   │   │   ├── globals.css
+│   │   │   └── variables.css
+│   │   │
+│   │   ├── utils/
+│   │   │   ├── chartUtils.ts
+│   │   │   ├── financialUtils.ts
+│   │   │   ├── formatters.ts
+│   │   │   ├── reportUtils.ts
+│   │   │   └── validators.ts
+│   │   │
+│   │   ├── layout.tsx               # Root layout
+│   │   ├── page.tsx                 # Root entry page (Home)
+│   │   │
+│   │   ├── config/
+│   │   │   ├── apiConfig.ts
+│   │   │   ├── constants.ts
+│   │   │   └── env.ts
+│   │   │
+│   │   ├── services/
+│   │   │   ├── aiService.ts
+│   │   │   ├── investmentService.ts
+│   │   │   └── reportService.ts
+│   │   │
+│   │   └── validators/
+│   │       ├── lumpsumValidator.ts
+│   │       └── sipValidator.ts
+│   │
+│   └── ...
+│
+├── .gitignore
+├── eslint.config.mjs
+├── jsconfig.json
+├── next-env.d.ts
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── README.md
+└── tsconfig.json
