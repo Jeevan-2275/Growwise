@@ -1,20 +1,20 @@
 <div align="center">
 
 <!-- Waving FinTech Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=00C7B7,10B981,059669&height=180&section=header&text=📈%20GROWWISE&fontSize=42&fontAlignY=45&animation=twinkling&desc=Virtual%20Mutual%20Fund%20Explorer%20%26%20Interactive%20SIP%20Simulator&descSize=15&descAlignY=65" width="100%" alt="Growwise Banner" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=00C7B7,10B981,059669&height=180&section=header&text=GROWWISE&fontSize=42&fontAlignY=45&animation=twinkling&desc=Virtual%20Mutual%20Fund%20Explorer%20and%20Interactive%20SIP%20Simulator&descSize=15&descAlignY=65" width="100%" alt="Growwise Banner" />
 
 <br/>
 
 <!-- Interactive Typing Header -->
 <h1>
-  <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=28&duration=2500&pause=1000&color=10B981&center=true&vCenter=true&width=800&lines=🏦+Real-Time+Mutual+Fund+Explorer;📊+Interactive+NAV+Trend+Charts;💰+Historical+SIP+%26+Lumpsum+Simulations;👀+Personalized+Watchlists+%26+Portfolios;🔄+Daily+Cron-driven+MFAPI.in+Schedules" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=28&duration=2500&pause=1000&color=10B981&center=true&vCenter=true&width=800&lines=Real-Time+Mutual+Fund+Explorer;Interactive+NAV+Trend+Charts;Historical+SIP+and+Lumpsum+Simulations;Personalized+Watchlists+and+Portfolios;Daily+Cron-driven+MFAPI.in+Schedules" alt="Typing SVG" />
 </h1>
 
 <p align="center">
-  <img src="https://img.shields.io/github/languages/top/Jeevan-2275/Growwise?color=10B981&style=for-the-badge" alt="Top Language" />
-  <img src="https://img.shields.io/github/repo-size/Jeevan-2275/Growwise?color=00C7B7&style=for-the-badge" alt="Repo Size" />
-  <img src="https://img.shields.io/badge/Next.js-v14-000000?logo=nextdotjs&logoColor=white&style=for-the-badge" alt="Next.js" />
-  <img src="https://img.shields.io/badge/Prisma-ORM-2d3748?logo=prisma&logoColor=white&style=for-the-badge" alt="Prisma" />
+  <img src="https://img.shields.io/badge/Framework-Next.js_v14-000000?logo=nextdotjs&logoColor=white&style=for-the-badge" alt="Next.js" />
+  <img src="https://img.shields.io/badge/Stack-React_/_TypeScript-10B981?style=for-the-badge" alt="Stack" />
+  <img src="https://img.shields.io/badge/Database-MongoDB_/_Prisma-47A248?logo=mongodb&logoColor=white&style=for-the-badge" alt="Database" />
+  <img src="https://img.shields.io/badge/Data_Source-MFAPI.in-00C7B7?style=for-the-badge" alt="API" />
   <img src="https://img.shields.io/badge/License-MIT-059669?style=for-the-badge" alt="License" />
 </p>
 
