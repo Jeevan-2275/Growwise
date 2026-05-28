@@ -37,7 +37,7 @@ export async function fetchFundNAV(schemeCode: string, fromDate?: string, toDate
     
     return await getCachedData(
       cacheKey,
-      () => getMFNAV(schemeCode, fromDate, toDate),
+      () => getMFNAV(schemeCode),
       { revalidate: 1800, tags: ['mf-nav'] }
     )()
   } catch (error) {

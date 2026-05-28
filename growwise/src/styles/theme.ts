@@ -5,15 +5,15 @@ const baseTheme = createTheme({
   palette: {
     mode: 'light',
     primary: { 
-      main: '#1e8e3e', // richer green
-      light: '#81c784',
-      dark: '#005d2b',
+      main: '#00d4aa', // Groww's signature teal
+      light: '#4dd4b8',
+      dark: '#00b894',
       contrastText: '#ffffff',
     },
     secondary: { 
-      main: '#0277bd', // deeper blue
-      light: '#58a5f0',
-      dark: '#004c8c',
+      main: '#6c5ce7', // Purple accent
+      light: '#a29bfe',
+      dark: '#5f3dc4',
       contrastText: '#ffffff',
     },
     background: { 
@@ -21,20 +21,32 @@ const baseTheme = createTheme({
       paper: '#ffffff',
     },
     error: {
-      main: '#d32f2f',
+      main: '#e17055',
     },
     warning: {
-      main: '#ed6c02',
+      main: '#fdcb6e',
     },
     info: {
-      main: '#0288d1',
+      main: '#74b9ff',
     },
     success: {
-      main: '#2e7d32',
+      main: '#00b894',
     },
     text: {
-      primary: '#1a2027',
-      secondary: '#637381',
+      primary: '#1f2937',
+      secondary: '#64748b',
+    },
+    grey: {
+      50: '#f8fafc',
+      100: '#f1f5f9',
+      200: '#e2e8f0',
+      300: '#cbd5e1',
+      400: '#94a3b8',
+      500: '#64748b',
+      600: '#475569',
+      700: '#334155',
+      800: '#1e293b',
+      900: '#0f172a',
     },
   },
   typography: {

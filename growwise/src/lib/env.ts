@@ -11,6 +11,10 @@ const envSchema = z.object({
   // OAuth Providers
   GOOGLE_CLIENT_ID: z.string(),
   GOOGLE_CLIENT_SECRET: z.string(),
+  GITHUB_CLIENT_ID: z.string().optional(),
+  GITHUB_CLIENT_SECRET: z.string().optional(),
+  LINKEDIN_CLIENT_ID: z.string().optional(),
+  LINKEDIN_CLIENT_SECRET: z.string().optional(),
   
   // External APIs
   MFAPI_BASE_URL: z.string().url().default('https://api.mfapi.in'),
@@ -19,6 +23,9 @@ const envSchema = z.object({
   // App Config
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
   PORT: z.string().transform(Number).default('3000'),
+  
+  // Cron Job
+  CRON_SECRET: z.string().optional(),
 })
 
 export const env = envSchema.parse(process.env)

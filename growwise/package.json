@@ -2,13 +2,18 @@
   "name": "growwise",
   "private": true,
   "scripts": {
-    "dev": "next dev ",
-    "build": "next build ",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "prisma:generate": "prisma generate",
     "prisma:push": "prisma db push",
     "prisma:studio": "prisma studio",
-    "typecheck": "tsc --noEmit"
+    "prisma:seed": "tsx prisma/seed.ts",
+    "db:setup": "prisma generate && prisma db push",
+    "db:reset": "prisma db push --force-reset",
+    "typecheck": "tsc --noEmit",
+    "lint": "next lint",
+    "update-funds": "curl -X GET http://localhost:3000/api/cron/update-funds"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -35,6 +40,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.14",
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^24.7.0",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",

@@ -2,6 +2,9 @@ export type MockFund = {
   schemeCode: string
   schemeName: string
   category: string
+  fundHouse: string
+  schemeType: string
+  schemeCategory: string
   rating: number
   latestNav: number
   returns: { oneY: number; threeY: number; fiveY: number }
@@ -23,19 +26,25 @@ function genHistory(startNav: number, days = 365 * 3): { date: string; nav: numb
   return out
 }
 
-const bases = [
-  { name: 'Bluechip Equity Fund', cat: 'Equity Large Cap' },
-  { name: 'Flexi Cap Opportunities', cat: 'Flexi Cap' },
-  { name: 'Midcap Growth Fund', cat: 'Equity Mid Cap' },
-  { name: 'Smallcap Leaders', cat: 'Equity Small Cap' },
-  { name: 'Nifty 50 Index', cat: 'Index' },
-  { name: 'Banking & PSU Debt', cat: 'Debt' },
-  { name: 'Dynamic Asset Allocation', cat: 'Hybrid' },
-  { name: 'Gold ETF', cat: 'Commodity' },
+const fundHouses = [
+  'HDFC Mutual Fund', 'SBI Mutual Fund', 'ICICI Prudential', 'Axis Mutual Fund',
+  'Kotak Mahindra', 'Aditya Birla Sun Life', 'Franklin Templeton', 'UTI Mutual Fund'
 ]
 
-export const mockFunds: MockFund[] = Array.from({ length: 32 }).map((_, i) => {
+const bases = [
+  { name: 'Bluechip Equity Fund', cat: 'Equity Large Cap', type: 'Open Ended' },
+  { name: 'Flexi Cap Opportunities', cat: 'Flexi Cap', type: 'Open Ended' },
+  { name: 'Midcap Growth Fund', cat: 'Equity Mid Cap', type: 'Open Ended' },
+  { name: 'Smallcap Leaders', cat: 'Equity Small Cap', type: 'Open Ended' },
+  { name: 'Nifty 50 Index', cat: 'Index', type: 'Open Ended' },
+  { name: 'Banking & PSU Debt', cat: 'Debt', type: 'Open Ended' },
+  { name: 'Dynamic Asset Allocation', cat: 'Hybrid', type: 'Open Ended' },
+  { name: 'Gold ETF', cat: 'Commodity', type: 'Open Ended' },
+]
+
+export const mockFunds: MockFund[] = Array.from({ length: 100 }).map((_, i) => {
   const base = bases[i % bases.length]
+  const fundHouse = fundHouses[i % fundHouses.length]
   const code = String(100000 + i)
   const start = 10 + (i % 10)
   const history = genHistory(start)
@@ -43,8 +52,11 @@ export const mockFunds: MockFund[] = Array.from({ length: 32 }).map((_, i) => {
   const rating = 3 + (i % 3)
   return {
     schemeCode: code,
-    schemeName: `GW ${base.name} ${i + 1}`,
+    schemeName: `${fundHouse.split(' ')[0]} ${base.name} ${i + 1}`,
     category: base.cat,
+    fundHouse,
+    schemeType: base.type,
+    schemeCategory: base.cat,
     rating,
     latestNav,
     returns: { oneY: 12 + (i % 5), threeY: 14 + (i % 4), fiveY: 16 + (i % 3) },

@@ -15,11 +15,14 @@ model User {
   email     String   @unique
   name      String?
   image     String?
+  password  String?  // Optional for OAuth users
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   // Relations
   portfolios Portfolio[]
+  watchlist WatchlistItem[]
+  virtualPortfolios VirtualPortfolio[]
 
   @@map("users")
 }
@@ -53,4 +56,86 @@ model Holding {
   portfolio   Portfolio @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
 
   @@map("holdings")
+}
+
+model Fund {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  schemeCode    String   @unique
+  schemeName    String
+  fundHouse     String
+  schemeType    String
+  schemeCategory String
+  isActive      Boolean  @default(true)
+  aiDescription String?
+  lastUpdated   DateTime @default(now())
+  createdAt     DateTime @default(now())
+
+  // Relations
+  navHistory    FundNAV[]
+  watchlistItems WatchlistItem[]
+  virtualSIPs   VirtualSIP[]
+
+  @@map("funds")
+}
+
+model FundNAV {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  fundId     String   @db.ObjectId
+  date       DateTime
+  nav        Float
+  createdAt  DateTime @default(now())
+
+  // Relations
+  fund       Fund     @relation(fields: [fundId], references: [id], onDelete: Cascade)
+
+  @@map("fund_nav")
+  @@index([fundId, date])
+}
+
+model WatchlistItem {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId     String   @db.ObjectId
+  fundId     String   @db.ObjectId
+  addedAt    DateTime @default(now())
+
+  // Relations
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  fund       Fund     @relation(fields: [fundId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, fundId])
+  @@map("watchlist")
+}
+
+model VirtualPortfolio {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String   @db.ObjectId
+  name        String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sipEntries  VirtualSIP[]
+
+  @@map("virtual_portfolios")
+}
+
+model VirtualSIP {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  portfolioId     String   @db.ObjectId
+  fundId          String   @db.ObjectId
+  amount          Float
+  frequency       String   // monthly, quarterly, etc.
+  startDate       DateTime
+  endDate         DateTime?
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  portfolio       VirtualPortfolio @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
+  fund            Fund @relation(fields: [fundId], references: [id])
+
+  @@map("virtual_sip")
 }
